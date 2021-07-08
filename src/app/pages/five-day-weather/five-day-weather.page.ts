@@ -7,10 +7,12 @@ import { FiveDayOpenWeather, OpenWeatherList } from "../../interfaces/five-day-o
 })
 export class FiveDayWeatherPage{
   public readonly fiveDayWeather: OpenWeatherList[];
-  
+  public readonly cityName: string;
+
   constructor(
     private activatedRoute: ActivatedRoute,
   ) {
     this.fiveDayWeather = (<FiveDayOpenWeather>this.activatedRoute.snapshot.data.weather).list.slice(0, 5);
+    this.cityName = (<FiveDayOpenWeather>this.activatedRoute.snapshot.data.weather).city.name;
   }
 }

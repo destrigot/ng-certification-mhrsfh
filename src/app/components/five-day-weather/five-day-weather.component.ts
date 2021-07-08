@@ -6,5 +6,9 @@ import { OpenWeatherList } from "../../interfaces/five-day-open-weather";
   templateUrl: 'five-day-weather.component.html'
 })
 export class FiveDayWeatherComponent {
-  @Input() fiveDayWeather: OpenWeatherList;
+  @Input() fiveDayWeather: OpenWeatherList[];
+  @Input() cityName: string;
+
+  public readonly days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 }
