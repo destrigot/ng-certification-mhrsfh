@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OpenWeatherCustomIconUrl } from '../enums/open-weather-custom-icon-url.enum';
+import { OpenWeatherList } from '../interfaces/five-day-open-weather';
 import { OpenWeather } from '../interfaces/open-weather';
 
 @Injectable()
@@ -31,17 +32,20 @@ export class OpenWeatherService {
       );
   }
 
-  public getFiveDayWeather(zipcode: string): Observable<any> {
+  public getFiveDayWeather(zipcode: string): Observable<FiveDayOpenWeather> {
     const params = new HttpParams()
       .set('zip', `${zipcode},ch`)
       .set('appid', this.apiKey)
       .set('units', 'metric');
 
     return this.http
-      .get<any>('https://api.openweathermap.org/data/2.5/forecast/daily', {
+      .get<FiveDayOpenWeather>('https://api.openweathermap.org/data/2.5/forecast/daily', {
         params: params
-      }).pipe(map((weather: any) => {
-        
+      }).pipe(map((weather: FiveDayOpenWeather) => {
+        weather.list.forEach((openWeatherList: OpenWeatherList) => {
+          openWeatherList.weather[0].iconUrl = OpenWeatherCustomIconUrl[openWeatherList.weather[0].main];
+        });
+        return weather;
       }))
   }
 }
