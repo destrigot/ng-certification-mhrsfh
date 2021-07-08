@@ -2,6 +2,7 @@ import { OpenWeatherCustomIconUrl } from "../enums/open-weather-custom-icon-url.
 
 export interface OpenWeatherList {
   dt: number,
+  date: Date,
   sunrise: number,
   sunset: number,
   temp:{

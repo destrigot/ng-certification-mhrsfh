@@ -47,6 +47,7 @@ export class OpenWeatherService {
       }).pipe(map((weather: FiveDayOpenWeather) => {
         weather.zipcode = zipcode;
         weather.list.forEach((openWeatherList: OpenWeatherList) => {
+          openWeatherList.date = new Date(openWeatherList.dt);
           openWeatherList.weather[0].iconUrl = OpenWeatherCustomIconUrl[openWeatherList.weather[0].main];
         });
         return weather;

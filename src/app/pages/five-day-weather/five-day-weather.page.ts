@@ -1,18 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, ParamMap } from "@angular/router";
-import { OpenWeatherService } from "../../services/open-weather.service";
+import { FiveDayOpenWeather, OpenWeatherList } from "../../interfaces/five-day-open-weather";
 
 @Component({
   templateUrl: './five-day-weather.page.html'
 })
-export class FiveDayWeatherPage implements OnInit{
+export class FiveDayWeatherPage{
+  public readonly fiveDayWeather: OpenWeatherList[];
+  
   constructor(
     private activatedRoute: ActivatedRoute,
   ) {
-    
-  }
-
-  public ngOnInit() {
-    console.log(this.activatedRoute.snapshot.data.weather);
+    this.fiveDayWeather = (<FiveDayOpenWeather>this.activatedRoute.snapshot.data.weather).list.slice(0, 5);
   }
 }
