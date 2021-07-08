@@ -1,0 +1,19 @@
+<div class="well flex">
+  <div>
+    <h3>{{detailWeather.name}} ({{detailWeather.zipcode}})</h3>
+    <h4>Current conditions: {{detailWeather.weather[0].main}}</h4>
+    <h4>Temperatures today:</h4>
+    <p>
+      Current {{detailWeather.main.temp}}
+      - Max {{detailWeather.main.temp_max}}
+      - Min {{detailWeather.main.temp_min}}
+    </p>
+    <p>
+      <a href="/forecast/95742">Show 5-day forecast for {{detailWeather.name}}</a>
+    </p>
+  </div>
+  <div>
+    <button class="close" (click)="onCloseClick()">×</button>
+    <img [src]="detailWeather.weather[0].iconUrl">
+  </div>
+</div>
