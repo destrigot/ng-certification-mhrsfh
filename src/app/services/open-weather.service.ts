@@ -30,4 +30,16 @@ export class OpenWeatherService {
         })
       );
   }
+
+  public getFiveDayWeather(zipcode: string): Observable<any> {
+    const params = new HttpParams()
+      .set('zip', `${zipcode},ch`)
+      .set('appid', this.apiKey)
+      .set('units', 'metric');
+
+    return this.http
+      .get<any>('https://api.openweathermap.org/data/2.5/forecast/daily', {
+        params: params
+      })
+  }
 }

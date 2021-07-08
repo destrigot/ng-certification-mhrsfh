@@ -13,9 +13,11 @@ import { FiveDayWeatherComponent } from './components/five-day-weather/five-day-
 
 import { ZipcodeService } from './services/zipcode.service';
 import { OpenWeatherService } from './services/open-weather.service';
+import { FiveDayWeatherResolver } from './pages/five-day-weather/five-day-weather.resolver';
 
 import { DetailWeatherPage } from './pages/detail-weather/detail-weather.page';
 import { FiveDayWeatherPage } from './pages/five-day-weather/five-day-weather.page';
+
 
 @NgModule({
   imports: [
@@ -33,7 +35,7 @@ import { FiveDayWeatherPage } from './pages/five-day-weather/five-day-weather.pa
     DetailWeatherPage,
     FiveDayWeatherPage
   ],
-  providers: [ZipcodeService, OpenWeatherService],
+  providers: [ZipcodeService, OpenWeatherService, FiveDayWeatherResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
