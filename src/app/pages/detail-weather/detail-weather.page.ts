@@ -70,4 +70,8 @@ export class DetailWeatherPage implements OnInit{
       this.zipcodeService.zipcodes = currentZipcodesValue;
     }
   }
+
+  public trackByIndex(index: number): number {
+    return index;
+  }
 }

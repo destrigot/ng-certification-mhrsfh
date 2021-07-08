@@ -8,13 +8,9 @@
       <!---->
       <li class="list-group-item" *ngFor="let dayWeather of fiveDayWeather">
         {{dayWeather.date | date}}
-        {{days[dayWeather.date.getDay()]}}, 
-        {{dayWeather.date.getMonth()}}
-        {{dayWeather.date.getDate()}} -
-        Monday, Mar 23:
-        Rain
-        - Min: 45
-        - Max: 59
+        {{dayWeather.weather[0].main}}
+        - Min: {{dayWeather.temp.min}}
+        - Max: {{dayWeather.temp.max}}
 
         <img class="icon" [src]="dayWeather.weather[0].iconUrl">
       </li>

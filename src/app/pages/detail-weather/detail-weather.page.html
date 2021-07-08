@@ -1,5 +1,5 @@
 <div class="container-fluid">
   <enter-zipcode-app (newZipcode)="onNewZipcode($event)"></enter-zipcode-app>
-  <detail-weather-app *ngFor="let detailWeather of detailWeathers$ | async" [detailWeather]=detailWeather
+  <detail-weather-app *ngFor="let detailWeather of detailWeathers$ | async; trackBy: trackByIndex" [detailWeather]=detailWeather
     (closeDetailWeather)="onCloseDetailWeather($event)"></detail-weather-app>
 </div>
