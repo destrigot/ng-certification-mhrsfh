@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { EnterZipcodeComponent } from './components/enter-zipcode/enter-zipcode.component';
-import { ZipcodeService } from './services/zipcode.service';
-import { DetailWeatherComponent } from './components/detail-weather/detail-weather.component';
-import { OpenWeatherService } from './services/open-weather.service';
-import { HttpClientModule } from '@angular/common/http';
 import { appRoutes } from './app.rounting';
-import { RouterModule } from '@angular/router';
+
+import { EnterZipcodeComponent } from './components/enter-zipcode/enter-zipcode.component';
+import { DetailWeatherComponent } from './components/detail-weather/detail-weather.component';
 import { FiveDayWeatherComponent } from './components/five-day-weather/five-day-weather.component';
+
+import { ZipcodeService } from './services/zipcode.service';
+import { OpenWeatherService } from './services/open-weather.service';
+
 import { DetailWeatherPage } from './pages/detail-weather/detail-weather.page';
+import { FiveDayWeatherPage } from './pages/five-day-weather/five-day-weather.page';
 
 @NgModule({
   imports: [
@@ -26,7 +30,8 @@ import { DetailWeatherPage } from './pages/detail-weather/detail-weather.page';
     EnterZipcodeComponent,
     DetailWeatherComponent,
     FiveDayWeatherComponent,
-    DetailWeatherPage
+    DetailWeatherPage,
+    FiveDayWeatherPage
   ],
   providers: [ZipcodeService, OpenWeatherService],
   bootstrap: [AppComponent]
