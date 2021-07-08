@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { EnterZipcodeComponent } from './components/enter-zipcode/enter-zipcode.component';
 import { ZipcodeService } from './services/zipcode.service';
 import { DetailWeatherComponent } from './components/detail-weather/detail-weather.component';
@@ -24,7 +23,6 @@ import { DetailWeatherPage } from './pages/detail-weather/detail-weather.page';
   ],
   declarations: [
     AppComponent,
-    HelloComponent,
     EnterZipcodeComponent,
     DetailWeatherComponent,
     FiveDayWeatherComponent,
