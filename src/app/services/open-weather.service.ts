@@ -40,6 +40,8 @@ export class OpenWeatherService {
     return this.http
       .get<any>('https://api.openweathermap.org/data/2.5/forecast/daily', {
         params: params
-      })
+      }).pipe(map((weather: any) => {
+        
+      }))
   }
 }

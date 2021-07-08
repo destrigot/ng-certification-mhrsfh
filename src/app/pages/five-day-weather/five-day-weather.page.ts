@@ -8,16 +8,11 @@ import { OpenWeatherService } from "../../services/open-weather.service";
 export class FiveDayWeatherPage implements OnInit{
   constructor(
     private activatedRoute: ActivatedRoute,
-    private openWeather: OpenWeatherService
   ) {
     
   }
 
   public ngOnInit() {
-    this.activatedRoute.paramMap
-    .pipe()
-    .subscribe((paramMap: ParamMap) => {
-      paramMap.get('zipcode');
-    })
+    console.log(this.activatedRoute.snapshot.data.weather);
   }
 }
