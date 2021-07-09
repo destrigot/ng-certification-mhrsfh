@@ -8,7 +8,7 @@
       <!---->
       <li class="list-group-item" *ngFor="let dayWeather of fiveDayWeather">
         {{dayWeather.date | date}}
-        {{dayWeather.weather[0].main}}
+        {{dayWeather.weather[0].description}}
         - Min: {{dayWeather.temp.min}}
         - Max: {{dayWeather.temp.max}}
 
