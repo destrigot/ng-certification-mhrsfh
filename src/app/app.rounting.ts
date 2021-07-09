@@ -12,5 +12,9 @@ export const appRoutes: Routes = [
     path: 'forecast/:zipcode',
     component: FiveDayWeatherPage,
     resolve: {weather: FiveDayWeatherResolver}
-  }
+  },
+  {
+    path: '**',
+    component: DetailWeatherPage
+  },
 ];

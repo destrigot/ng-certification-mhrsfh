@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, zip } from 'rxjs';
 
@@ -47,6 +48,9 @@ export class DetailWeatherPage implements OnInit{
           ...this.detailWeathers$.value,
           detailWeather
         ]);
+      }, (error: HttpErrorResponse) => {
+        console.log(error);
+        alert(error.statusText);
       });
   }
 
